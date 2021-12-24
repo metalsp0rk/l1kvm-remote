@@ -1,0 +1,20 @@
+target extended-remote :3333
+
+define rrr
+make
+target extended-remote :3333
+load
+monitor reset init
+continue
+end
+
+define cll
+make
+target extended-remote :3333
+load
+monitor reset init
+end
+
+define mri
+monitor reset init
+end
