@@ -8,18 +8,15 @@
 #include "tusb.h"
 #include "usb_descriptors.h"
 
-//--------------------------------------------------------------------+
-// MACRO CONSTANT TYPEDEF PROTYPES
-//--------------------------------------------------------------------+
+
+// Where we begin our GPIO pins.
+#define GPIO_OFFSET 2
 
 /* Blink pattern
  * - 250 ms  : device not mounted
  * - 1000 ms : device mounted
  * - 2500 ms : device is suspended
  */
-
-// Where we begin our GPIO pins.
-#define GPIO_OFFSET 2
 enum  {
   BLINK_NOT_MOUNTED = 250,
   BLINK_MOUNTED = 1000,
@@ -161,40 +158,36 @@ void hid_task(void)
       // normal switching.
       // Switch to head 1
       if(btnstate[1] && !prevbtnstate[1]){
-        printf("BTN 1 Lead Edge\n");
         keysend_task_t keycode_item = { .keycode = { 0 } };
         keycode_item.keycode[0] = HID_KEY_SCROLL_LOCK;
-        if (!queue_try_add(&keysend_queue, &keycode_item)) printf("Could not add to queue\n");
+        queue_try_add(&keysend_queue, &keycode_item);
         queue_try_add(&keysend_queue, &keycode_item);
         keycode_item.keycode[0] = HID_KEY_1;
         queue_try_add(&keysend_queue, &keycode_item);
       }
       // Switch to head 2
       if(btnstate[2] && !prevbtnstate[2]){
-        printf("BTN 2 Lead Edge\n");
         keysend_task_t keycode_item = { .keycode = { 0 } };
         keycode_item.keycode[0] = HID_KEY_SCROLL_LOCK;
-        if (!queue_try_add(&keysend_queue, &keycode_item)) printf("Could not add to queue\n");
+        queue_try_add(&keysend_queue, &keycode_item);
         queue_try_add(&keysend_queue, &keycode_item);
         keycode_item.keycode[0] = HID_KEY_2;
         queue_try_add(&keysend_queue, &keycode_item);
       }
       // Switch to head 3
       if(btnstate[3] && !prevbtnstate[3]){
-        printf("BTN 3 Lead Edge\n");
         keysend_task_t keycode_item = { .keycode = { 0 } };
         keycode_item.keycode[0] = HID_KEY_SCROLL_LOCK;
-        if (!queue_try_add(&keysend_queue, &keycode_item)) printf("Could not add to queue\n");
+        queue_try_add(&keysend_queue, &keycode_item);
         queue_try_add(&keysend_queue, &keycode_item);
         keycode_item.keycode[0] = HID_KEY_3;
         queue_try_add(&keysend_queue, &keycode_item);
       }
       // Switch to head 4
       if(btnstate[4] && !prevbtnstate[4]){
-        printf("BTN 4 Lead Edge\n");
         keysend_task_t keycode_item = { .keycode = { 0 } };
         keycode_item.keycode[0] = HID_KEY_SCROLL_LOCK;
-        if (!queue_try_add(&keysend_queue, &keycode_item)) printf("Could not add to queue\n");
+        queue_try_add(&keysend_queue, &keycode_item);
         queue_try_add(&keysend_queue, &keycode_item);
         keycode_item.keycode[0] = HID_KEY_4;
         queue_try_add(&keysend_queue, &keycode_item);
