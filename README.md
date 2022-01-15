@@ -10,7 +10,7 @@ USB Remote for the Level1Techs KVM using Raspberry Pi Pico
 | ----  | -----                         | -----                                                                                                                    | ----                                  |
 | 1     | Raspberry Pi Pico             |                                                                                                                          | https://www.adafruit.com/product/4864 |
 | 5     | 12mm Round Tactile Switch     | These switches come with button caps.  If you don't like the colors, I've included a 3mf file so you can print your own. | https://www.adafruit.com/product/1009 |
-| 2     | M3x20mm button head cap screw | I have bored enough of a hole for m3x25 screws if you have those.                                                        | https://www.mcmaster.com/92095A185/   |
+| 2     | M3x20mm button head cap screw |                                                                                                                          | (https://www.mcmaster.com/92095A185/  |
 
 
 ## Enclosure
